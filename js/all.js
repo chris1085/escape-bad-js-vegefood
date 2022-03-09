@@ -16,7 +16,7 @@ var filter = document.querySelector('.filter');
 
 filter.addEventListener('click', filterCategory);
 
-function renderData() {
+function renderData(data) {
   var str = '';
   data.forEach((b, index) => {
     // TODO: 改成 ES6 的 Template Literals (字面字串符)
@@ -33,6 +33,7 @@ function filterCategory(e) {
     showData = data.filter((i) => {
       return i.種類代碼 == category;
     });
+
     // TODO: 之後拆成 renderData 函式
     table.innerHTML = renderData(showData);
   } else {
